@@ -4,7 +4,7 @@
  * FN_SIGN
  * FN_KEY
  * FN_AUTH
- * cron "28 8,21 * * *" jd_bean_change.js
+ * cron "0 8 * * *" fn-club.js
  */
 
 const axios = require("axios");
@@ -22,6 +22,10 @@ const cookieHeader = Object.entries(cookies)
   .join("; ");
 
 async function signIn() {
+  // 随机延迟 1-2分钟
+  await new Promise((resolve) =>
+    setTimeout(resolve, Math.random() * 60000 + 60000)
+  );
   try {
     // 签到请求链接右键打卡按钮直接复制替换
     const response = await axios.get(
