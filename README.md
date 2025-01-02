@@ -50,11 +50,11 @@ rsa
 
 点击青龙面板的订阅管理——>创建订阅
 
-直接在名称这输入：`ql repo https://github.com/HeiDaotu/WFRobertQL.git "" "initialize|notify" "initialize" "main"`，就会自动输入到其他的空栏。
+直接在名称这输入：`ql repo https://github.com/tnnevol/ql-script.git "" "initialize|notify" "initialize" "main"`，就会自动输入到其他的空栏。
 
 - **名称：** 随便写，自己看得懂就行，或者直接写`WFRobert脚本库`
 - **类型：** 公开仓库
-- **链接：** `https://github.com/HeiDaotu/WFRobertQL.git`
+- **链接：** `https://github.com/tnnevol/ql-script.git`
 - **定时类型：** crontab
 - **定时规则：** 随意，或者写`0 0 5 * * ? `，每天5点自动拉取仓库。
 - **黑名单：**`initialize|notify`
@@ -75,4 +75,4 @@ rsa
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=HeiDaotu/WFRobertQL&type=Date)](https://star-history.com/#HeiDaotu/WFRobertQL&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=tnnevol/ql-script&type=Date)](https://star-history.com/#tnnevol/ql-script&Date)
