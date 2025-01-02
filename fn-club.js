@@ -1,10 +1,10 @@
 /**
- * @description 飞牛论坛签到
  * env
  * FN_SIGN
  * FN_KEY
  * FN_AUTH
  * cron "0 8 * * *" fn-club.js
+ * 飞牛论坛签到
  */
 
 const axios = require("axios");
