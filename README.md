@@ -3,22 +3,22 @@
 
 <center> <font face="黑体" size=5>目前支持</font></center>
 
-| 应用                                          | 是否需要cookie | 是否需要密码 | 是否可用 | 功能                                                        |
-|---------------------------------------------| -------------- | ------------ | -------- |-----------------------------------------------------------|
-| [京东](https://m.jd.com)                      | ✅              | ❌            | ✅        | 京东脚本来自其他开源库[faker3](https://github.com/shufflewzc/faker3) |
-| [百度贴吧](https://tieba.baidu.com)             | ✅              | ❌            | ✅        | 每日自动签到所有贴吧                                                |
-| [吾爱破解](https://www.52pojie.cn/)             | ✅              | ❌            | ❌        | ~~每日签到~~（签到算法换了，暂未处理）                                     |
-| [阿里云盘](https://www.aliyundrive.com/)        | ✅              | ❌            | ✅        | 每日签到得奖励                                                   |
+| 应用                                            | 是否需要cookie | 是否需要密码 | 是否可用 | 功能                                                                 |
+| ----------------------------------------------- | -------------- | ------------ | -------- | -------------------------------------------------------------------- |
+| [京东](https://m.jd.com)                        | ✅              | ❌            | ✅        | 京东脚本来自其他开源库[faker3](https://github.com/shufflewzc/faker3) |
+| [百度贴吧](https://tieba.baidu.com)             | ✅              | ❌            | ✅        | 每日自动签到所有贴吧                                                 |
+| [吾爱破解](https://www.52pojie.cn/)             | ✅              | ❌            | ❌        | ~~每日签到~~（签到算法换了，暂未处理）                               |
+| [阿里云盘](https://www.aliyundrive.com/)        | ✅              | ❌            | ✅        | 每日签到得奖励                                                       |
 | [天翼网盘](https://cloud.189.cn/web/login.html) | ❌              | ✅            | ✅        | 每日签到抽奖得空间容量                                               |
-| [夸克网盘](https://pan.quark.cn/)               |  ✅          |  ❌      | ✅     | 每日签到抽奖得空间容量                                                           |
-| [DDNSTO](https://www.ddnsto.com/)           | ✅              | ❌            | ✅        | 自动续费7天免费套餐                                                |
-| [小黑盒](https://www.xiaoheihe.cn/home)        | ✅              | ❌            | ❌        | ~~每日签到得盒币~~（目前只签到，无奖励）                                    |
-| [好游快报](https://www.3839.com/)               | ✅              | ❌            | ❌        | ~~每日爆米花浇水~~                                               |
-| [交易猫](https://www.jiaoyimao.com/)           | ✅              | ❌            | ❌        | ~~每日签到得积分~~                                               |
-| [网易云游戏](https://cg.163.com/#/mobile)        | ✅              | ❌            | ❌        | ~~每日签到获取使用时间和成长值~~                                        |
-| [邀玩论坛](https://invites.fun/)                | ✅              | ❌            | ❌        | ~~每日签到得药丸~~                                               |
-| [恩山论坛](https://www.right.com.cn/)           | ✅              | ❌            | ✅        | 每日模拟登录获得+1恩山币（积分）                                         |
-| [科学刀论坛](https://www.kxdao.net/)             | ✅              | ❌            | ❌        | ~~每日签到~~                                                  |
+| [夸克网盘](https://pan.quark.cn/)               | ✅              | ❌            | ✅        | 每日签到抽奖得空间容量                                               |
+| [DDNSTO](https://www.ddnsto.com/)               | ✅              | ❌            | ✅        | 自动续费7天免费套餐                                                  |
+| [小黑盒](https://www.xiaoheihe.cn/home)         | ✅              | ❌            | ❌        | ~~每日签到得盒币~~（目前只签到，无奖励）                             |
+| [好游快报](https://www.3839.com/)               | ✅              | ❌            | ❌        | ~~每日爆米花浇水~~                                                   |
+| [交易猫](https://www.jiaoyimao.com/)            | ✅              | ❌            | ❌        | ~~每日签到得积分~~                                                   |
+| [网易云游戏](https://cg.163.com/#/mobile)       | ✅              | ❌            | ❌        | ~~每日签到获取使用时间和成长值~~                                     |
+| [邀玩论坛](https://invites.fun/)                | ✅              | ❌            | ❌        | ~~每日签到得药丸~~                                                   |
+| [恩山论坛](https://www.right.com.cn/)           | ✅              | ❌            | ✅        | 每日模拟登录获得+1恩山币（积分）                                     |
+| [科学刀论坛](https://www.kxdao.net/)            | ✅              | ❌            | ❌        | ~~每日签到~~                                                         |
 
 
 
@@ -50,15 +50,15 @@ rsa
 
 点击青龙面板的订阅管理——>创建订阅
 
-直接在名称这输入：`ql repo https://github.com/tnnevol/ql-script.git "" "initialize|notify" "initialize" "main"`，就会自动输入到其他的空栏。
+直接在名称这输入：`ql repo https://github.com/tnnevol/ql-script.git "" "sendNotify|initialize|notify|.idea|.gitignore" "sendNotify|initialize" "main"`，就会自动输入到其他的空栏。
 
 - **名称：** 随便写，自己看得懂就行，或者直接写`WFRobert脚本库`
 - **类型：** 公开仓库
 - **链接：** `https://github.com/tnnevol/ql-script.git`
 - **定时类型：** crontab
 - **定时规则：** 随意，或者写`0 0 5 * * ? `，每天5点自动拉取仓库。
-- **黑名单：**`initialize|notify`
-- **依赖文件：**`initialize`
+- **黑名单：**`sendNotify|initialize|notify|.idea|.gitignore`
+- **依赖文件：**`sendNotify|initialize`
 
 其他值默认，点击确定即可。
 
