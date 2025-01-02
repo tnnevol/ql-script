@@ -2,7 +2,7 @@
 "飞牛论坛签到"
  cron "0 8 * * *" fn-club.js
 */
-// "飞牛论坛签到"
+// name: "飞牛论坛签到"
 const notify = require("./sendNotify");
 const axios = require("axios");
 const cheerio = require("cheerio");
