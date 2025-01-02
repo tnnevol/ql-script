@@ -95,10 +95,10 @@ def update_token_file(num: int, data: dict):
     :param num: 第几个用户
     """
     num -= 1
-    with open('aliConfig.json', 'r', encoding="utf-8") as f:
+    with open('aliconfig.json', 'r', encoding="utf-8") as f:
         config = json.load(f)
     config[num] = data
-    with open('aliConfig.json', 'w', encoding="utf-8") as f:
+    with open('aliconfig.json', 'w', encoding="utf-8") as f:
         f.write(json.dumps(config, indent=4, ensure_ascii=False))
 
 
@@ -111,11 +111,11 @@ def main():
     initialize.info_message(
         "暂未开发自动领取奖励的功能，请自行在阿里网盘app领取签到奖励，注意次月会清空当月奖励，请在月底前将本月奖励领取，首次运行会生成 aliconfig.json 配置文件，如何配置请参考文档:https://scenario.heitu.eu.org/reference/aliyunpan/")
     # 判断是否存在文件
-    if not os.path.exists('aliConfig.json'):
+    if not os.path.exists('aliconfig.json'):
         base = [{"refresh_token": "用户1refresh_token", "is": 0}, {"refresh_token": "用户2refresh_token", "is": 0}]
-        with open('aliConfig.json', 'w', encoding="utf-8") as f:
+        with open('aliconfig.json', 'w', encoding="utf-8") as f:
             f.write(json.dumps(base, indent=4, ensure_ascii=False))
-    with open('aliConfig.json', 'r', encoding="utf-8") as f:
+    with open('aliconfig.json', 'r', encoding="utf-8") as f:
         config = json.load(f)
     num = 0
     for user in config:
