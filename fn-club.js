@@ -2,10 +2,10 @@
 飞牛论坛签到
  cron "0 8 * * *" fn-club.js
 */
-
+const $ = new Env("飞牛论坛签到");
+const notify = $.isNode() ? require("./sendNotify") : "";
 const axios = require("axios");
 const cheerio = require("cheerio");
-const notify = require("./sendNotify");
 
 // 填写对应的 Cookie 值
 const cookies = {
