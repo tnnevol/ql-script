@@ -1,9 +1,9 @@
 /*
-飞牛论坛签到
+"飞牛论坛签到"
  cron "0 8 * * *" fn-club.js
 */
-const $ = new Env("飞牛论坛签到");
-const notify = $.isNode() ? require("./sendNotify") : "";
+// "飞牛论坛签到"
+const notify = require("./sendNotify");
 const axios = require("axios");
 const cheerio = require("cheerio");
 
@@ -19,9 +19,10 @@ const cookieHeader = Object.entries(cookies)
 
 async function signIn() {
   // 随机延迟 1-2分钟
-  await new Promise((resolve) =>
-    setTimeout(resolve, Math.random() * 60000 + 60000)
-  );
+  const delay = Math.floor(0.1 + Math.random() * (2 - 0.1) * 1000);
+  await new Promise((resolve) => setTimeout(resolve, delay));
+  console.log("延迟" + delay + "ms");
+
   try {
     // 签到请求链接右键打卡按钮直接复制替换
     const response = await axios.get(
@@ -34,12 +35,14 @@ async function signIn() {
     );
 
     if (response.data.includes("恭喜您，打卡成功！")) {
+      console.log("打卡成功");
       await notify.sendNotify("飞牛论坛", "打卡成功");
       await getSignInInfo();
     } else if (response.data.includes("您今天已经打过卡了，请勿重复操作！")) {
+      console.log("已经打过卡了");
       await notify.sendNotify("飞牛论坛", "已经打过卡了");
     } else {
-      // console.log("打卡失败, cookies可能已经过期或站点更新.");
+      console.log("打卡失败, cookies可能已经过期或站点更新.");
       await notify.sendNotify(
         "飞牛论坛",
         "打卡失败, cookies可能已经过期或站点更新."
@@ -47,7 +50,7 @@ async function signIn() {
     }
   } catch (error) {
     await notify.sendNotify("飞牛论坛", "打卡失败");
-    // console.error("签到请求失败:", error);
+    console.error("签到请求失败:", error);
   }
 }
 
